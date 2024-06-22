@@ -1,0 +1,11 @@
+composer require laravel/sail --dev
+php artisan sail:install
+./vendor/bin/sail up -d
+./vendor/bin/sail artisan migrate
+./vendor/bin/sail composer require laravel/breeze --dev
+./vendor/bin/sail artisan breeze:install vue
+./vendor/bin/sail npm run dev
+./vendor/bin/sail artisan make:model Post -m
+./vendor/bin/sail artisan make:controller PostController
+./vendor/bin/sail artisan make:resource Post/PostResource
+./vendor/bin/sail artisan make:request Post/UpdateRequest
